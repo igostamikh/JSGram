@@ -12,7 +12,7 @@ const descriptionArray = [
     'Цените каждое мгновенье. Цените тех, кто рядом с вами и отгоняйте все сомненья. Не обижайте всех словами......',
     'Вот это тачка!'
 ];
-
+//Генератор случайных чисел
 function digit(index, key = false) {
     let number = Math.floor(Math.random() * index);
 
@@ -24,7 +24,7 @@ function digit(index, key = false) {
 
     return number;
 }
-
+// Создаём 26 объектов с изображениями и комментариями
 for (let i = 1; i <= 26; i++){
     let photoDescription = {};
 
@@ -36,9 +36,10 @@ for (let i = 1; i <= 26; i++){
     photoArray.push(photoDescription);
 }
 //Задача 2
+//Получаем шаблон и создаём DocumentFragment
 let pictureElement = document.querySelector('#picture-template').content.querySelector('.picture');
 let fragment = document.createDocumentFragment();
-
+//Заполняем DocumentFragment элементами
 for (let i = 0; i < photoArray.length; i++){
     let element = pictureElement.cloneNode(true);
 
@@ -48,5 +49,5 @@ for (let i = 0; i < photoArray.length; i++){
 
     fragment.appendChild(element);
 }
-//Задача 3
+//Задача 3. Отрисовуем элементы в div.pictures
 document.querySelector('.pictures').appendChild(fragment);

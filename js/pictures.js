@@ -9,7 +9,7 @@ const commentsArray = [
 ];
 const descriptionArray = [
     'Тестим новую камеру!', 'Затусили с друзьями на море', 'Как же круто тут кормят', 'Отдыхаем...',
-    'Цените каждое мгновенье. Цените тех, кто рядом с вами и отгоняйте все сомненья. Не обижайте всех словами......',
+    'Цените каждое мгновенье. Цените тех, кто рядом с вами и отгоняйте все сомненья. Не обижайте всех словами...',
     'Вот это тачка!'
 ];
 //Генератор случайных чисел
@@ -51,3 +51,18 @@ for (let i = 0; i < photoArray.length; i++){
 }
 //Задача 3. Отрисовуем элементы в div.pictures
 document.querySelector('.pictures').appendChild(fragment);
+/*Задача 4
+Покажите элемент .big-picture , удалив у него класс .hidden и заполните
+его данными из первого элемента сгенерированного вами массива
+*/
+let bigPicture = document.querySelector('.gallery-overlay');
+bigPicture.classList.remove('hidden');
+bigPicture.querySelector('.gallery-overlay-image').src = photoArray[0].url;
+bigPicture.querySelector('.likes-count').textContent = photoArray[0].likes.toString();
+bigPicture.querySelector('.comments-count').textContent = '1';
+bigPicture.querySelector('.gallery-caption')
+    .insertAdjacentText("afterbegin", photoArray[0].description);
+bigPicture.querySelector('.gallery-comment--text')
+    .insertAdjacentHTML('beforeend', '<li>' + photoArray[0].comments + '</li>');
+
+

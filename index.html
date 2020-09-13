@@ -47,7 +47,7 @@
 
         <div class="upload-form-preview">
           <div></div>
-          <img src="img/upload-default-image.jpg" class="effect-image-preview">
+          <img src="img/upload-default-image.jpg" alt="Default picture" class="effect-image-preview">
         </div>
 
         <fieldset class="upload-effect-controls">
@@ -139,10 +139,16 @@
 <div class="gallery-overlay hidden">
   <span class="gallery-overlay-close">&times;</span>
   <div class="gallery-overlay-preview">
+    <div class="gallery-caption"></div>
     <img src="" class="gallery-overlay-image" alt="">
     <div class="gallery-overlay-controls">
       <div class="gallery-overlay-controls-like">Нравится <span class="likes-count">0</span></div>
-      <div class="gallery-overlay-controls-comments"><span class="comments-count">125</span> комментариев</div>
+      <div class="gallery-overlay-controls-comments">
+        <span class="comments-count">125</span> комментариев
+      </div>
+      <div class="gallery-comments">
+        <ul class="gallery-comment--text"></ul>
+      </div>
     </div>
   </div>
 </div>
@@ -156,6 +162,8 @@
     </span>
   </a>
 </template>
+
+<script src="js/pictures.js"></script>
 
 </body>
 </html>
